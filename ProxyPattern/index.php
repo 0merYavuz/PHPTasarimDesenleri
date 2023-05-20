@@ -1,5 +1,5 @@
 <?php
-
+echo "<a href=\"index2\">nesnelerin çağırılma durumları</a><br><br>";
 interface Basbakan
 {
     public function isBul($yakinim);
@@ -11,12 +11,12 @@ class GercekBasbakan implements Basbakan
 {
     public function isBul($yakinim)
     {
-        echo "<br>Başbakan: Bana böyle isteklerde bulunmayın.";
+        echo "<br><b>Başbakan:</b> Bana böyle isteklerde bulunmayın.";
     }
 
     public function dertDinle($dert)
     {
-        echo "<br>Başbakan: Dinliyorum";
+        echo "<br><b>Başbakan:</b> Dinliyorum";
     }
 }
 
@@ -30,12 +30,12 @@ class VekilBasbakan implements Basbakan
     }
     public function isBul($yakinim)
     {
-        echo "<br>Vekil Başbakan: İş isteğinizi dinliyorum";
+        echo "<br><b>Vekil Başbakan:</b> İş isteğinizi dinliyorum";
     }
 
     public function dertDinle($dert)
     {
-        echo "<br>Vekil Başbakan: Derdinizi dinliyorum.";
+        echo "<br><b>Başbakan:</b> Derdinizi dinliyorum.";
         $ayiklandi = self::ayikla($dert);
         if($ayiklandi){
            self::ilet($dert); 
@@ -65,7 +65,7 @@ class BasbakanlikKalemi
     }
     public function banaBasbakaniVer()
     {
-        echo "<br>Başbakanlık Kalemi: Tabii efendim, sizi başbakana yönlendiriyorum.";
+        echo "<br><b>Başbakanlık Kalemi:</b> Tabii efendim, sizi başbakana yönlendiriyorum.";
         return $this->basbakan;
     }
 }
@@ -77,7 +77,7 @@ class Vatandas
 
     public function __construct()
     {
-        echo "<br>Vatandaş: Başbakanla görüşmek istiyorum";
+        echo "<br><b>Vatandaş:</b> Başbakanla görüşmek istiyorum";
         $kalem= new BasbakanlikKalemi;
         $this->basbakan = $kalem->banaBasbakaniVer();
     }
